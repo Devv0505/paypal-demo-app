@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Shop</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- PayPal SDK – SAME Sandbox Client ID as .env -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AfF29lE0hZupgZPgSDkLzOzdwpj6CJE0mbqmFmqGxtzhhzW3q_YpHh0HSaeV2k_zJ_d69YL9hcQdZ-EC&currency=USD"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Coffee Shop</h1>
+      <p class="subtitle">Choose your coffee and pay securely with PayPal.</p>
+
+      <!-- Coffee Selection Card -->
+      <div class="card">
+        <div class="options">
+          <button class="item active" data-name="Latte" data-price="4.50">
+            Latte<br />$4.50
+          </button>
+
+          <button class="item" data-name="Cappuccino" data-price="4.00">
+            Cappuccino<br />$4.00
+          </button>
+
+          <button class="item" data-name="Espresso" data-price="3.00">
+            Espresso<br />$3.00
+          </button>
+        </div>
+
+        <div class="details">
+          <label>
+            Quantity:
+            <input id="qty" type="number" value="1" min="1" />
+          </label>
+
+          <p id="total">Total: $4.50 (Latte × 1)</p>
+        </div>
+      </div>
+
+      <!-- PayPal Buttons -->
+      <div id="paypal-button-container" class="paypal-buttons"></div>
+
+      <!-- Payment Message -->
+      <p id="message" class="message"></p>
+    </div>
+
+    <!-- Frontend JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
